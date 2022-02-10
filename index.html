@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tada | API Documentation</title>
+    <!-- needed for adaptive design -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      main {
+        flex: 1 0 0;
+        overflow: hidden;
+      }
+    </style>    
+  </head>
+  <body>
+    <main role="main">
+      <div id="container"></div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/redoc/bundles/redoc.standalone.js"></script>
+    <script>
+    Redoc.init('./openapi.yaml', {
+      "theme": {
+        "colors": {
+          "primary": {
+            "main":"#32329f"
+          }
+        }, 
+        "logo": {
+          "maxWidth":"180px"
+        }
+      }
+    }, document.getElementById('container'))
+    </script>
+  </body>
+</html>
